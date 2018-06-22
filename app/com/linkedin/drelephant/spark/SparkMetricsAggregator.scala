@@ -98,7 +98,7 @@ class SparkMetricsAggregator(private val aggregatorConfigurationData: Aggregator
 
   private def executorInstancesOf(data: SparkApplicationData): Int = {
     val appConfigurationProperties = data.appConfigurationProperties
-    appConfigurationProperties.getOrElse(SPARK_EXECUTOR_INSTANCES_KEY, "2").map(_.toInt)
+    appConfigurationProperties.getOrElse(SPARK_EXECUTOR_INSTANCES_KEY, "2").toInt
   }
 
   private def executorMemoryBytesOf(data: SparkApplicationData): Long = {
