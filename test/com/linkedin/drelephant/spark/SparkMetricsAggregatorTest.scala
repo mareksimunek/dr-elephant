@@ -140,6 +140,10 @@ class SparkMetricsAggregatorTest extends FunSpec with Matchers {
 
       val result = aggregator.getResult
 
+      println(result.getResourceUsed)
+      println(result.getResourceWasted)
+      println(result.getTotalDelay)
+
       it("doesn't calculate resources used") {
         result.getResourceUsed should be(0L)
       }

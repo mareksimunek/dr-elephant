@@ -50,6 +50,11 @@ class SparkMetricsAggregator(private val aggregatorConfigurationData: Aggregator
     val executorInstances = executorInstancesOf(data)
     val executorMemoryBytes = executorMemoryBytesOf(data)
     val applicationDurationMillis = applicationDurationMillisOf(data)
+
+    println(executorInstances)
+    println(executorMemoryBytes)
+    println(applicationDurationMillis)
+
     if( applicationDurationMillis < 0) {
       logger.warn(s"applicationDurationMillis is negative. Skipping Metrics Aggregation:${applicationDurationMillis}")
     }  else {
