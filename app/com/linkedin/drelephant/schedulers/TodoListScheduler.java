@@ -66,13 +66,15 @@ public class TodoListScheduler implements Scheduler {
     workflowDepth = 0; // No sub-workflow support
 
     // task-name
-    taskId = properties.getProperty(TASK_EXECUTION_DATE);
+    taskId = properties.getProperty(TASK_NAME);
     // 2016-06-27T01:30:00
     taskIdExecutionDate = properties.getProperty(TASK_EXECUTION_DATE);
     // application-name
     flowId = properties.getProperty(FLOW_NAME); //
     // 2016-06-27T00:00:00
     flowExecutionDate = properties.getProperty(FLOW_EXECUTION_DATE);
+
+    logger.info("Scheduler settings" + toString() + " for appId " + appId);
   }
 
   @Override
@@ -133,5 +135,15 @@ public class TodoListScheduler implements Scheduler {
   @Override
   public String getJobName() {
     return jobName;
+  }
+
+  @Override
+  public String toString() {
+    return "TodoListScheduler{" +
+        "taskId='" + taskId + '\'' +
+        ", taskIdExecutionDate='" + taskIdExecutionDate + '\'' +
+        ", flowId='" + flowId + '\'' +
+        ", flowExecutionDate='" + flowExecutionDate + '\'' +
+        '}';
   }
 }
