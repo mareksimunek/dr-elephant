@@ -76,4 +76,9 @@
        <classname>com.linkedin.drelephant.schedulers.NoScheduler</classname>
     </scheduler>
 
+    <scheduler>
+        <name>todo_list_scheduler</name>
+        <classname>com.linkedin.drelephant.schedulers.TodoListScheduler</classname>
+    </scheduler>
+
 </schedulers>
